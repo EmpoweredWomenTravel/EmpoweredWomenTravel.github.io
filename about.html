@@ -98,7 +98,23 @@
         <p><a href="mailto:lorraine@empoweredwomentravel.com">lorraine@empoweredwomentravel.com</a></p>
       </div>
     </div>
-    <p class="prose" style="margin-top:24px;">For all other questions, please email us at <a href="mailto:info@empoweredwomentravel.com">info@empoweredwomentravel.com</a>. Thank you!</p>
+    <h3 style="text-align:center;margin-top:44px;">For all other questions, please use the form</h3>
+    <form class="ewt-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="Contact form - About page">
+      <input type="hidden" name="redirect" value="https://empoweredwomentravel.com/thanks.html">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+      <label for="c-name">Name *</label>
+      <input type="text" id="c-name" name="name" required>
+      <label for="c-email">Email Address *</label>
+      <input type="email" id="c-email" name="email" required>
+      <label for="c-subject">Subject *</label>
+      <input type="text" id="c-subject" name="topic" required>
+      <label for="c-message">Message *</label>
+      <textarea id="c-message" name="message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+      <p class="form-note">We'll reply from info@empoweredwomentravel.com &mdash; no spam, ever.</p>
+    </form>
   </div>
 </section>
 

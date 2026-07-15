@@ -57,7 +57,7 @@
         <tr><td>Early bird — paid in full by November 1, 2026</td><td>$150 off</td></tr>
         <tr><td>Deposit to hold your spot (non-refundable)</td><td>$597.00</td></tr>
       </table>
-      <a class="btn" href="mailto:info@empoweredwomentravel.com?subject=Reservation%20Request%20-%20Cuba%20February%202027" style="margin-right:10px;">Reserve Your Spot</a>
+      <a class="btn" href="#request" data-trip="cuba" style="margin-right:10px;">Reserve Your Spot</a>
       <a class="btn" href="itinerary.html">Full Itinerary</a>
     </div>
 
@@ -68,7 +68,7 @@
         <tr><td>Pricing</td><td>Contact us</td></tr>
       </table>
       <a class="btn" href="ghana.html" style="margin-right:10px;">Trip Details</a>
-      <a class="btn" href="mailto:info@empoweredwomentravel.com?subject=Ghana%202026%20Early%20List">Join the Early List</a>
+      <a class="btn" href="#request" data-trip="ghana">Join the Early List</a>
     </div>
 
     <div class="card">
@@ -78,7 +78,35 @@
         <tr><td>Pricing</td><td>Contact us</td></tr>
       </table>
       <a class="btn" href="tokyo.html" style="margin-right:10px;">Trip Details</a>
-      <a class="btn" href="mailto:info@empoweredwomentravel.com?subject=Tokyo%202026%20Early%20List">Join the Early List</a>
+      <a class="btn" href="#request" data-trip="tokyo">Join the Early List</a>
+    </div>
+
+    <div id="request" style="margin-top:50px;">
+      <h2 class="section-title">Request a Reservation</h2>
+      <form class="ewt-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="Trip request - Reservations page">
+      <input type="hidden" name="redirect" value="https://empoweredwomentravel.com/thanks.html">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+      <label for="trip-select">Which trip? *</label>
+      <select id="trip-select" name="trip" required>
+        <option value="Cuba - Havana and Beyond, February 10-16, 2027" data-key="cuba">Cuba &mdash; Havana &amp; Beyond, February 10&ndash;16, 2027</option>
+        <option value="Ghana - Summer 2026 (early list)" data-key="ghana">Ghana &mdash; Summer 2026 (early list)</option>
+        <option value="Tokyo - August 2026 (early list)" data-key="tokyo">Tokyo &mdash; August 2026 (early list)</option>
+        <option value="Tokyo - Conference trip" data-key="tokyo-conference">Tokyo &mdash; Conference trip</option>
+        <option value="General question" data-key="general">General question</option>
+      </select>
+      <label for="r-name">Name *</label>
+      <input type="text" id="r-name" name="name" required>
+      <label for="r-email">Email Address *</label>
+      <input type="email" id="r-email" name="email" required>
+      <label for="r-travelers">Number of travelers</label>
+      <input type="text" id="r-travelers" name="travelers">
+      <label for="r-message">Questions or requests</label>
+      <textarea id="r-message" name="message"></textarea>
+      <button type="submit" class="btn">Send Request</button>
+      <p class="form-note">We'll reply from info@empoweredwomentravel.com &mdash; no spam, ever.</p>
+    </form>
     </div>
 
     <div class="prose" style="text-align:center;margin-top:32px;">
@@ -114,5 +142,20 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var sel = document.getElementById('trip-select');
+  if (!sel) return;
+  function pick(key) {
+    for (var i = 0; i < sel.options.length; i++)
+      if (sel.options[i].dataset.key === key) { sel.selectedIndex = i; break; }
+  }
+  var q = new URLSearchParams(location.search).get('trip');
+  if (q) pick(q);
+  document.querySelectorAll('[data-trip]').forEach(function (a) {
+    a.addEventListener('click', function () { pick(a.dataset.trip); });
+  });
+})();
+</script>
 </body>
 </html>

@@ -99,7 +99,23 @@
       <p>Airfare, Visa, gratuity for drivers, guides, porters or alcoholic beverages.</p>
     </div>
 
-    <div style="text-align:center;" class="prose">
+    <h3 style="text-align:center;margin-top:44px;">Have a question? Send us a message</h3>
+    <form class="ewt-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="Contact form - Information page">
+      <input type="hidden" name="redirect" value="https://empoweredwomentravel.com/thanks.html">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+      <label for="i-name">Name *</label>
+      <input type="text" id="i-name" name="name" required>
+      <label for="i-email">Email Address *</label>
+      <input type="email" id="i-email" name="email" required>
+      <label for="i-message">Message *</label>
+      <textarea id="i-message" name="message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+      <p class="form-note">We'll reply from info@empoweredwomentravel.com &mdash; no spam, ever.</p>
+    </form>
+
+    <div style="text-align:center;margin-top:40px;" class="prose">
       <p>Make your reservations online and book your travel adventure while there's still room.</p>
       <a class="btn" href="reservations.html">Make a Reservation</a>
     </div>
