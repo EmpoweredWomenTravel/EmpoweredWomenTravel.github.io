@@ -5,6 +5,7 @@ Static recreation of [empoweredwomentravel.com](https://empoweredwomentravel.com
 ## Structure
 
 - `index.html` — home page
+- `tokyo.html` — Tokyo, Japan trips (August 2026 festival trip + tech/security conference trip); Tokyo photos are from Unsplash (free license)
 - `itinerary.html` — Cuba tour itinerary, pricing and inclusions
 - `information.html` — trip information
 - `reservations.html` — tour packages (booking is via email/phone; the original Squarespace checkout doesn't carry over)
