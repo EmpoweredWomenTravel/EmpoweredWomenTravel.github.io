@@ -27,6 +27,6 @@ Pushing to `main` publishes automatically via GitHub Pages (Settings → Pages �
 
 - Every page duplicates the header/nav and footer — when adding a page or nav item, update all HTML files.
 - Each page has its own `<title>`, meta description, canonical URL and Open Graph/Twitter tags in `<head>`; when adding a page, copy the block and update the values (og:image should be a 1200×630 card in `images/og/`), and add the page to `sitemap.xml`.
-- Contact is email-only (`info@empoweredwomentravel.com`); there is intentionally no phone number on the site. Contact forms could be added later with a service like [Formspree](https://formspree.io/) (no backend needed).
+- Contact is via embedded [Web3Forms](https://web3forms.com/) forms delivering to `info@empoweredwomentravel.com` (About, Information, Reservations request form, Coming Soon vote form); there is intentionally no phone number on the site. The access key lives in each form's hidden `access_key` input; the Web3Forms dashboard account is under info@. Successful submissions redirect to `thanks.html` (noindex).
 - Ghana and Tokyo pricing is "contact us" until dates/prices are finalized; Cuba pricing and dates live in `itinerary.html`, `reservations.html` and the `index.html` hero.
 - Some Wikimedia Commons photos are CC BY-SA and require the photographer credits kept in the page footers (`ghana.html`, `destinations.html`).
