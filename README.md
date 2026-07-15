@@ -8,6 +8,7 @@ Static recreation of [empoweredwomentravel.com](https://empoweredwomentravel.com
 - `ghana.html` — Ghana trips (Panafest/Emancipation Day summer 2026 + Chale Wote festival season); Ghana photos are from Wikimedia Commons (CC BY-SA, credited in the page footer)
 - `tokyo.html` — Tokyo, Japan trips (August 2026 festival trip + tech/security conference trip); Tokyo photos are from Unsplash (free license)
 - `itinerary.html` — Cuba tour itinerary, pricing and inclusions
+- `destinations.html` — "Coming Soon" page: future destinations (Africa series + worldwide) with vote-by-email CTAs; photos from Unsplash and Wikimedia Commons (CC, credited in the page footer)
 - `information.html` — trip information
 - `reservations.html` — tour packages (booking is via email/phone; the original Squarespace checkout doesn't carry over)
 - `gallery.html` — photos from past trips
