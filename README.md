@@ -1,30 +1,32 @@
 # Empowered Women Travel
 
-Static recreation of [empoweredwomentravel.com](https://empoweredwomentravel.com), originally built on Squarespace. Content and images were recovered from the [Internet Archive Wayback Machine](https://web.archive.org/web/2019/https://empoweredwomentravel.com/) (2019 snapshots) and rebuilt as plain HTML/CSS for GitHub Pages hosting.
+Website for [empoweredwomentravel.com](https://empoweredwomentravel.com), hosted on GitHub Pages. Originally built on Squarespace; the content and images were recovered from the [Internet Archive Wayback Machine](https://web.archive.org/web/2019/https://empoweredwomentravel.com/) (2019 snapshots) and rebuilt as plain HTML/CSS, then extended with new destinations.
 
 ## Structure
 
-- `index.html` — home page
-- `ghana.html` — Ghana trips (Panafest/Emancipation Day summer 2026 + Chale Wote festival season); Ghana photos are from Wikimedia Commons (CC BY-SA, credited in the page footer)
-- `tokyo.html` — Tokyo, Japan trips (August 2026 festival trip + tech/security conference trip); Tokyo photos are from Unsplash (free license)
-- `itinerary.html` — Cuba tour itinerary, pricing and inclusions
-- `destinations.html` — "Coming Soon" page: future destinations (Africa series + worldwide) with vote-by-email CTAs; photos from Unsplash and Wikimedia Commons (CC, credited in the page footer)
+- `index.html` — home page (Cuba feature + Ghana/Tokyo promos + Coming Soon teaser)
+- `ghana.html` — Ghana trip (Panafest / Emancipation Day, summer 2026); photos from Wikimedia Commons (CC BY-SA, credited in the page footer)
+- `tokyo.html` — Tokyo, Japan trip (August 2026 festivals + tech conference option); photos from Unsplash (free license)
+- `itinerary.html` — Cuba tour itinerary, pricing and inclusions (next departure: February 10–16, 2027)
+- `destinations.html` — "Coming Soon" page: future destinations (Africa series + worldwide) with vote-by-email CTAs
 - `information.html` — trip information
-- `reservations.html` — tour packages (booking is via email/phone; the original Squarespace checkout doesn't carry over)
+- `reservations.html` — tour packages (booking is via email; the original Squarespace checkout doesn't carry over)
 - `gallery.html` — photos from past trips
-- `about.html` — about / FAQ / contact
+- `about.html` — about / FAQ (including current Cuba travel rules) / contact
 - `css/style.css` — shared stylesheet
-- `images/` — images recovered from the Wayback Machine
-- `CNAME` — custom domain for GitHub Pages
+- `images/` — site images; `images/og/` holds the 1200×630 social share cards used by the Open Graph tags
+- `CNAME` — custom domain (do not delete; GitHub Pages reads it)
+- `sitemap.xml`, `robots.txt` — search engine files; the sitemap is registered in Google Search Console
+- `googlef6750ccbb09aab6a.html` — Google Search Console ownership verification (**do not delete** or the property loses verification)
 
-## Things to update
+## How it's deployed
 
-- **Trip dates and prices are from 2019** (Havana trips at $697/$797 and the $1,497 tour). Update `index.html`, `itinerary.html` and `reservations.html` before promoting new trips.
-- The original contact forms were Squarespace forms; they've been replaced with `mailto:` links. A service like [Formspree](https://formspree.io/) can add a real form without a backend.
+Pushing to `main` publishes automatically via GitHub Pages (Settings → Pages → `main` branch, `/` root). The custom domain `empoweredwomentravel.com` is configured with Enforce HTTPS; DNS A records point at GitHub Pages (`185.199.108–111.153`) with a `www` CNAME to `empoweredwomentravel.github.io`. Google Search Console is verified for the property, with `sitemap.xml` submitted.
 
-## Deploying to GitHub Pages
+## Editing notes
 
-1. Push this repo to GitHub.
-2. Repo → Settings → Pages → Source: `main` branch, `/ (root)`.
-3. Point DNS for `empoweredwomentravel.com` at GitHub Pages (A records `185.199.108.153`, `.109.`, `.110.`, `.111.153`, plus a `www` CNAME to `<username>.github.io`).
-4. In Settings → Pages, set the custom domain and enable **Enforce HTTPS**.
+- Every page duplicates the header/nav and footer — when adding a page or nav item, update all HTML files.
+- Each page has its own `<title>`, meta description, canonical URL and Open Graph/Twitter tags in `<head>`; when adding a page, copy the block and update the values (og:image should be a 1200×630 card in `images/og/`), and add the page to `sitemap.xml`.
+- Contact is email-only (`info@empoweredwomentravel.com`); there is intentionally no phone number on the site. Contact forms could be added later with a service like [Formspree](https://formspree.io/) (no backend needed).
+- Ghana and Tokyo pricing is "contact us" until dates/prices are finalized; Cuba pricing and dates live in `itinerary.html`, `reservations.html` and the `index.html` hero.
+- Some Wikimedia Commons photos are CC BY-SA and require the photographer credits kept in the page footers (`ghana.html`, `destinations.html`).
